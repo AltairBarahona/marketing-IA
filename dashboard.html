@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing AI Platform - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Marketing AI</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active" data-target="dashboard-view">Dashboard</a></li>
+                    <li><a href="#" data-target="campaigns-view">Campañas</a></li>
+                    <li><a href="#" data-target="analytics-view">Análisis</a></li>
+                    <li><a href="#" data-target="ia-tools-view">Herramientas IA</a></li>
+                    <li><a href="#" data-target="settings-view">Configuración</a></li>
+                    <li><a href="#" id="logout">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Bienvenido, Usuario</h1>
+                <div class="user-profile">
+                    <span>Usuario Ejemplo</span>
+                    <img src="https://via.placeholder.com/40" alt="User Avatar">
+                </div>
+            </header>
+
+            <section id="dashboard-view" class="content-view active-view">
+                <h2>Dashboard Principal</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>Campañas Activas</h3>
+                        <p class="metric-value">5</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Costo por Adquisición (CPA)</h3>
+                        <p class="metric-value">$25.50</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Lifetime Value (LTV)</h3>
+                        <p class="metric-value">$350.75</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Vistas Totales (Últimos 30 días)</h3>
+                        <p class="metric-value">1,250,000</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Nuevos Leads</h3>
+                        <p class="metric-value">320</p>
+                    </div>
+                     <div class="metric-card">
+                        <h3>Retorno de Inversión (ROI)</h3>
+                        <p class="metric-value">350%</p>
+                    </div>
+                </div>
+                <div class="charts-section">
+                    <div class="chart-container">
+                        <h4>Rendimiento de Campañas</h4>
+                        <canvas id="campaignPerformanceChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h4>Distribución de Vistas por Plataforma</h4>
+                        <canvas id="platformViewsChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section id="campaigns-view" class="content-view">
+                <h2>Gestión de Campañas</h2>
+                <button id="createNewCampaignBtn" class="btn">Crear Nueva Campaña</button>
+                <div class="campaign-list">
+                    </div>
+            </section>
+
+            <section id="analytics-view" class="content-view">
+                <h2>Análisis Detallado</h2>
+                <p>Más métricas y análisis profundos estarán disponibles aquí.</p>
+            </section>
+
+            <section id="ia-tools-view" class="content-view">
+                <h2>Herramientas de IA para Marketing</h2>
+                <div class="ia-tool">
+                    <h3>Generador de Contenido IA</h3>
+                    <p>Crea copies y contenido para tus campañas.</p>
+                    <div id="ia-chat-module">
+                        <h4>Simulador de Creación de Campaña con IA</h4>
+                        <div id="chat-area">
+                            <div class="ai-message">Hola! ¿Sobre qué tema será tu nueva campaña?</div>
+                        </div>
+                        <input type="text" id="userInput" placeholder="Describe tu campaña o producto...">
+                        <button id="sendToAI" class="btn">Enviar</button>
+                        <div id="ai-suggestions">
+                            <h5>Sugerencias de la IA:</h5>
+                            <ul id="suggestions-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="settings-view" class="content-view">
+                <h2>Configuración</h2>
+                <p>Opciones y personalización de la cuenta.</p>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
