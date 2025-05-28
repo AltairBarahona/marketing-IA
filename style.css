@@ -1,60 +1,75 @@
+/* Global Resets and Base Styles (Mobile First) */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     background-color: #f4f7f6;
     color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    line-height: 1.6;
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
+    width: 100%;
+    margin: 0 auto;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
 }
 
-/* Login Page Styles */
+header, main, footer {
+    padding: 15px;
+}
+
+/* Login Page (Mobile First) */
 .login-container {
-    max-width: 450px;
-    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-container header {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .login-container header h1 {
     color: #2c3e50;
-    margin-bottom: 10px;
-    font-size: 2.5em;
+    margin-bottom: 8px;
+    font-size: 2em; /* Adjusted for mobile */
 }
 
 .login-container header p {
     color: #7f8c8d;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+#loginForm {
+    width: 100%;
+    max-width: 400px; /* Limit form width on larger mobile */
 }
 
 .form-group {
-    margin-bottom: 20px;
-    text-align: left;
+    margin-bottom: 15px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     color: #34495e;
     font-weight: bold;
+    font-size: 0.9em;
 }
 
 .form-group input {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     border: 1px solid #dfe6e9;
     border-radius: 4px;
     box-sizing: border-box;
-    transition: border-color 0.3s ease;
+    font-size: 1em;
 }
 
 .form-group input:focus {
@@ -65,119 +80,133 @@ body {
 .btn {
     background-color: #3498db;
     color: white;
-    padding: 12px 20px;
+    padding: 12px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s ease;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .btn:hover {
     background-color: #2980b9;
 }
 
-.login-container footer p {
-    margin-top: 30px;
-    color: #95a5a6;
-    font-size: 0.9em;
+.login-container footer {
+    text-align: center;
+    margin-top: 25px;
 }
 
-/* Dashboard Styles */
+.login-container footer p {
+    color: #95a5a6;
+    font-size: 0.8em;
+}
+
+/* Dashboard Styles (Mobile First) */
 .dashboard-container {
     display: flex;
-    min-height: 95vh; /* Adjust as needed */
-    overflow: hidden; /* Prevent scrollbars on container */
+    flex-direction: column; /* Stack sidebar and main content on mobile */
 }
 
 .sidebar {
-    width: 260px;
-    background-color: #2c3e50; /* Dark blue-gray */
-    color: #ecf0f1; /* Light gray text */
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    /* Future: Could be a toggleable menu */
 }
 
 .sidebar .logo {
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* For logo and potential toggle */
+    padding: 5px 0;
+    margin-bottom: 10px;
 }
 
 .sidebar .logo h2 {
     margin: 0;
-    font-size: 1.8em;
-    color: #3498db; /* Primary blue for logo accent */
+    font-size: 1.5em;
+    color: #3498db;
 }
 
+/* Basic mobile nav - items might scroll horizontally or stack */
 .sidebar nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    overflow-x: auto; /* Allow horizontal scrolling for nav items */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .sidebar nav ul li a {
     display: block;
-    padding: 15px 20px;
+    padding: 10px 15px;
     color: #ecf0f1;
     text-decoration: none;
     border-radius: 4px;
-    margin-bottom: 8px;
+    margin-right: 8px;
+    white-space: nowrap; /* Prevent items from wrapping */
+    font-size: 0.9em;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sidebar nav ul li a:hover,
 .sidebar nav ul li a.active {
-    background-color: #3498db; /* Primary blue for active/hover */
+    background-color: #3498db;
     color: #fff;
 }
 
 .main-content {
+    padding: 15px;
+    background-color: #f4f7f6;
     flex-grow: 1;
-    padding: 25px;
-    background-color: #f4f7f6; /* Light gray background for content area */
-    overflow-y: auto; /* Allow scrolling for main content if it overflows */
+    box-sizing: border-box;
 }
 
 .dashboard-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
+    flex-direction: column; /* Stack header elements on mobile */
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
     border-bottom: 1px solid #dfe6e9;
 }
 
 .dashboard-header h1 {
-    margin: 0;
+    margin: 0 0 10px 0;
     color: #2c3e50;
-    font-size: 1.8em;
+    font-size: 1.5em;
 }
 
 .user-profile {
     display: flex;
     align-items: center;
+    font-size: 0.9em;
 }
 
 .user-profile span {
-    margin-right: 10px;
+    margin-right: 8px;
     color: #34495e;
 }
 
 .user-profile img {
     border-radius: 50%;
+    width: 30px; /* Smaller avatar for mobile */
+    height: 30px;
 }
 
 .content-view {
-    display: none; /* Hidden by default */
+    display: none;
     animation: fadeIn 0.5s ease-in-out;
 }
 
 .content-view.active-view {
-    display: block; /* Shown when active */
+    display: block;
 }
 
 @keyframes fadeIn {
@@ -187,34 +216,28 @@ body {
 
 .metrics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 .metric-card {
     background-color: #fff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.metric-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
 .metric-card h3 {
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: #3498db;
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 .metric-card .metric-value {
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: bold;
     color: #2c3e50;
     margin: 0;
@@ -222,57 +245,60 @@ body {
 
 .charts-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    margin-bottom: 30px;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 .chart-container {
     background-color: #fff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
 }
 
 .chart-container h4 {
     text-align: center;
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #2c3e50;
+    font-size: 1.1em;
 }
 
-/* IA Chat Module Styles */
+/* IA Chat Module Styles (Mobile First) */
 #ia-chat-module {
     background-color: #fff;
-    padding: 25px;
+    padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
     margin-top: 20px;
 }
 
 #ia-chat-module h4 {
     color: #2c3e50;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
 }
 
 #chat-area {
-    height: 200px;
+    height: 180px; /* Adjusted height for mobile */
     border: 1px solid #dfe6e9;
     border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 8px;
+    margin-bottom: 10px;
     overflow-y: auto;
     background-color: #f9f9f9;
 }
 
 .user-message,
 .ai-message {
-    padding: 8px 12px;
-    border-radius: 15px;
-    margin-bottom: 10px;
-    max-width: 70%;
+    padding: 8px 10px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    max-width: 80%; /* Slightly wider for mobile */
     line-height: 1.4;
+    font-size: 0.9em;
 }
 
 .user-message {
@@ -289,27 +315,35 @@ body {
     border-bottom-left-radius: 3px;
 }
 
-#userInput {
-    width: calc(100% - 90px);
-    padding: 12px;
-    border: 1px solid #dfe6e9;
-    border-radius: 4px;
-    margin-right: 10px;
-    box-sizing: border-box;
+.input-group { /* Styling for the new wrapper */
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
 }
 
-#sendToAI {
-    width: 80px;
-    padding: 12px 0;
+#userInput {
+    flex-grow: 1; /* Input takes available space */
+    padding: 10px;
+    border: 1px solid #dfe6e9;
+    border-radius: 4px;
+    font-size: 0.9em;
+    min-width: 0; /* Fix for flex item sizing */
+}
+
+#sendToAI.btn { /* Ensure button styling applies */
+    width: auto; /* Let it size based on content or fixed width */
+    padding: 10px 15px;
+    flex-shrink: 0; /* Prevent button from shrinking */
 }
 
 #ai-suggestions {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 #ai-suggestions h5 {
     color: #2c3e50;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    font-size: 1em;
 }
 
 #ai-suggestions ul {
@@ -319,33 +353,33 @@ body {
 
 #ai-suggestions ul li {
     background-color: #e9f5ff;
-    padding: 10px;
+    padding: 8px;
     border-radius: 4px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     border: 1px solid #cce4f7;
-    font-size: 0.95em;
+    font-size: 0.9em;
 }
 
-
-/* Campaign List */
+/* Campaign List (Mobile First) */
 .campaign-list .campaign-item {
     background-color: #fff;
-    padding: 15px;
+    padding: 12px;
     border-radius: 6px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-    margin-bottom: 15px;
-    border-left: 4px solid #3498db;
+    margin-bottom: 10px;
+    border-left: 3px solid #3498db;
 }
 
 .campaign-item h4 {
     margin-top: 0;
     margin-bottom: 5px;
     color: #2c3e50;
+    font-size: 1.05em;
 }
 
 .campaign-item p {
     margin-bottom: 3px;
-    font-size: 0.9em;
+    font-size: 0.85em;
     color: #555;
 }
 
@@ -353,85 +387,128 @@ body {
     font-weight: bold;
 }
 
-.campaign-item .status.active {
-    color: #27ae60;
+.campaign-item .status.active { color: #27ae60; }
+.campaign-item .status.paused { color: #f39c12; }
+.campaign-item .status.completed { color: #7f8c8d; }
+
+#createNewCampaignBtn.btn {
+    margin-bottom: 15px;
+    width: auto; /* Auto width for mobile */
+    display: inline-block; /* To respect padding correctly */
 }
 
-.campaign-item .status.paused {
-    color: #f39c12;
-}
+/* Medium screens (tablets, small desktops) - ~600px or 768px are common breakpoints */
+@media (min-width: 768px) {
+    .container {
+        /* Max width for login stays, dashboard can be wider */
+    }
+    .login-container {
+        max-width: 450px; /* Original width */
+        padding: 40px;
+    }
+    .login-container header h1 { font-size: 2.5em; }
 
-.campaign-item .status.completed {
-    color: #7f8c8d;
-}
-
-#createNewCampaignBtn {
-    margin-bottom: 20px;
-    width: auto;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
     .dashboard-container {
-        flex-direction: column;
+        flex-direction: row; /* Sidebar and main content side-by-side */
+        min-height: 95vh; /* As before */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow for dashboard container */
+        border-radius: 8px;
+        overflow: hidden;
+        max-width: 1200px; /* Max width for dashboard */
+        margin: 20px auto; /* Center dashboard on larger screens */
     }
 
     .sidebar {
-        width: 100%;
-        height: auto;
-        flex-direction: row; /* Or keep column and make it toggleable */
-        padding: 10px;
-        align-items: center;
+        width: 260px;
+        padding: 20px;
+        height: auto; /* Let it fill height of parent */
+        overflow-y: auto;
+        flex-shrink: 0; /* Prevent sidebar from shrinking */
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        flex-direction: column; /* Stack logo and nav vertically */
     }
+
     .sidebar .logo {
-        margin-bottom: 0;
-        margin-right: auto;
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 10px 0;
+        justify-content: center;
     }
-    .sidebar nav {
-        display: flex; /* For horizontal menu items on small screens */
-        overflow-x: auto;
-    }
+    .sidebar .logo h2 { font-size: 1.8em; }
+
     .sidebar nav ul {
-        display: flex;
+        flex-direction: column; /* Stack nav items vertically */
+        overflow-x: hidden;
     }
+
     .sidebar nav ul li a {
-        padding: 10px 15px;
-        margin-bottom: 0;
-        margin-right: 5px;
-        white-space: nowrap;
+        padding: 15px 20px;
+        margin-bottom: 8px;
+        margin-right: 0;
+        font-size: 1em;
     }
 
     .main-content {
-        padding: 15px;
+        padding: 25px;
+        overflow-y: auto;
     }
 
     .dashboard-header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row; /* Align header items in a row */
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
     }
-
-    .user-profile {
-        margin-top: 10px;
-    }
+    .dashboard-header h1 { font-size: 1.8em; margin-bottom: 0; }
+    .user-profile img { width: 40px; height: 40px;}
 
     .metrics-grid {
-        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 2-3 columns */
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    .metric-card { padding: 20px; }
+    .metric-card h3 { font-size: 1.1em; }
+    .metric-card .metric-value { font-size: 2em; }
+    .metric-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     }
 
     .charts-section {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 columns if space */
+        gap: 25px;
+        margin-bottom: 30px;
     }
+    .chart-container { padding: 20px; }
+    .chart-container h4 { font-size: 1.2em; margin-bottom: 20px; }
 
+    #ia-chat-module { padding: 25px; }
+    #ia-chat-module h4 { font-size: 1.2em; margin-bottom: 15px; }
+    #chat-area { height: 200px; padding: 10px; margin-bottom: 15px; }
+    .user-message, .ai-message { font-size: 1em; padding: 8px 12px; }
+    
+    .input-group { margin-bottom: 15px; }
     #userInput {
-        width: calc(100% - 95px);
+        padding: 12px;
+        font-size: 1em;
+    }
+    #sendToAI.btn { padding: 12px 20px;}
+
+    #ai-suggestions { margin-top: 20px; }
+    #ai-suggestions h5 { font-size: 1.1em; margin-bottom: 10px; }
+    #ai-suggestions ul li { padding: 10px; font-size: 0.95em; }
+
+    #createNewCampaignBtn.btn {
+        margin-bottom: 20px;
     }
 }
 
-@media (max-width: 480px) {
-    .login-container header h1 {
-        font-size: 2em;
-    }
-    .sidebar nav {
-        width: calc(100% - 120px); /* Adjust based on logo width */
+/* Larger screens (desktops) - optional, adjust as needed */
+@media (min-width: 1024px) {
+    .metrics-grid {
+        /* Could go to 3-4 columns if desired */
+         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
 } 
