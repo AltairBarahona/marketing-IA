@@ -459,6 +459,188 @@ header, main, footer {
     display: inline-block;
 }
 
+/* Detailed Analytics Section Styles */
+.analytics-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+    background-color: #232339; /* Card background */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #3a3a5a;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.control-group label {
+    font-size: 0.85em;
+    color: #b0b0b0;
+    margin-bottom: 3px;
+}
+
+.control-group input[type="date"] {
+    background-color: #1f1f34;
+    border: 1px solid #4a4a6a;
+    color: #e0e0e0;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9em;
+}
+
+.analytics-controls .btn-small {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    align-self: flex-end; /* Align with bottom of inputs */
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.kpi-card {
+    background-color: #232339;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid #3a3a5a;
+}
+
+.kpi-card h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1em;
+    color: #c0c0c0;
+    font-weight: 500;
+}
+
+.kpi-card .kpi-value {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #7f5af0; /* Accent color for KPI value */
+    margin-bottom: 5px;
+}
+
+.kpi-card .kpi-trend {
+    font-size: 0.8em;
+}
+
+.kpi-trend.positive {
+    color: #27ae60; /* Green for positive trend */
+}
+
+.kpi-trend.negative {
+    color: #e74c3c; /* Red for negative trend */
+}
+
+.main-chart-area {
+    background-color: #232339;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #3a3a5a;
+}
+
+.main-chart-area h3 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.chart-placeholder {
+    min-height: 300px; /* Ensure space for the chart */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Placeholder styling, actual chart will replace this */
+    background-color: #1f1f34;
+    border-radius: 5px;
+}
+.chart-placeholder .chart-alt-text {
+    color: #88889a;
+    font-style: italic;
+}
+
+.data-table-section {
+    background-color: #232339;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #3a3a5a;
+}
+
+.data-table-section h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.table-container {
+    overflow-x: auto; /* For responsive tables */
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #c0c0c0;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #3a3a5a;
+    font-size: 0.9em;
+}
+
+table th {
+    background-color: #2c2c44;
+    color: #e0e0e0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+table tbody tr {
+    background-color: #232339;
+    transition: background-color 0.2s ease;
+}
+
+table tbody tr:hover {
+    background-color: #2c2c44;
+}
+
+table tbody td {
+    color: #b0b0b0;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #7f5af0;
+    color: #7f5af0;
+    padding: 10px 20px;
+}
+
+.btn-outline:hover {
+    background-color: rgba(127, 90, 240, 0.1);
+    color: #9a7bf7;
+    transform: translateY(-1px);
+}
+
 /* Medium screens (tablets, small desktops) - ~600px or 768px are common breakpoints */
 @media (min-width: 768px) {
     .container {
@@ -575,6 +757,47 @@ header, main, footer {
         font-size: 1em;
         margin-bottom: 25px;
     }
+
+    /* Detailed Analytics Responsive Adjustments */
+    .analytics-controls {
+        padding: 25px;
+    }
+
+    .control-group input[type="date"] {
+        padding: 10px 12px;
+        font-size: 0.95em;
+    }
+
+    .analytics-controls .btn-small {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+    }
+
+     .kpi-card h4 {
+        font-size: 1.05em;
+    }
+
+    .kpi-card .kpi-value {
+        font-size: 2em;
+    }
+
+    .main-chart-area, .data-table-section {
+        padding: 30px;
+    }
+
+    .main-chart-area h3, .data-table-section h3 {
+        font-size: 1.4em;
+    }
+
+    table th, table td {
+        padding: 14px 18px;
+        font-size: 0.95em;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -598,6 +821,10 @@ header, main, footer {
 
     .dashboard-header h1 { font-size: 2.2em; }
 
+    /* Detailed Analytics Responsive Adjustments for 1024px+ */
+    .kpi-grid {
+        grid-template-columns: repeat(4, 1fr); /* Aim for 4 KPIs in a row */
+    }
 }
 
 /* Optional: Further refinement for very large screens if needed */

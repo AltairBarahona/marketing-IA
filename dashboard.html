@@ -84,7 +84,99 @@
 
             <section id="analytics-view" class="content-view">
                 <h2>Análisis Detallado</h2>
-                <p>Más métricas y análisis profundos estarán disponibles aquí.</p>
+                
+                <div class="analytics-controls">
+                    <div class="control-group">
+                        <label for="startDate">Fecha Inicio:</label>
+                        <input type="date" id="startDate" name="startDate">
+                    </div>
+                    <div class="control-group">
+                        <label for="endDate">Fecha Fin:</label>
+                        <input type="date" id="endDate" name="endDate">
+                    </div>
+                    <button class="btn btn-small">Aplicar Filtro</button>
+                </div>
+
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <h4>Total de Conversiones</h4>
+                        <p class="kpi-value">1,280</p>
+                        <span class="kpi-trend positive">+15% vs periodo anterior</span>
+                    </div>
+                    <div class="kpi-card">
+                        <h4>Tasa de Clics (CTR) Promedio</h4>
+                        <p class="kpi-value">4.75%</p>
+                        <span class="kpi-trend negative">-0.5% vs periodo anterior</span>
+                    </div>
+                    <div class="kpi-card">
+                        <h4>Ingresos Generados</h4>
+                        <p class="kpi-value">$12,300</p>
+                        <span class="kpi-trend positive">+22% vs periodo anterior</span>
+                    </div>
+                    <div class="kpi-card">
+                        <h4>Nuevos Suscriptores</h4>
+                        <p class="kpi-value">450</p>
+                        <span class="kpi-trend positive">+8% vs periodo anterior</span>
+                    </div>
+                </div>
+
+                <div class="main-chart-area">
+                    <h3>Tendencia de Adquisición de Usuarios</h3>
+                    <div class="chart-placeholder">
+                        <canvas id="detailedUserAcquisitionChart"></canvas>
+                        <p class_="chart-alt-text">[Placeholder: Gráfico detallado de adquisición de usuarios]</p>
+                    </div>
+                </div>
+
+                <div class="data-table-section">
+                    <h3>Desglose de Datos por Campaña</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nombre Campaña</th>
+                                    <th>Impresiones</th>
+                                    <th>Clics</th>
+                                    <th>Conversiones</th>
+                                    <th>Costo</th>
+                                    <th>Ingresos</th>
+                                    <th>ROI</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Campaña Verano 2024</td>
+                                    <td>150,000</td>
+                                    <td>7,500</td>
+                                    <td>350</td>
+                                    <td>$1,200</td>
+                                    <td>$4,500</td>
+                                    <td>275%</td>
+                                </tr>
+                                <tr>
+                                    <td>Lanzamiento Producto X</td>
+                                    <td>220,000</td>
+                                    <td>9,800</td>
+                                    <td>420</td>
+                                    <td>$2,000</td>
+                                    <td>$7,000</td>
+                                    <td>250%</td>
+                                </tr>
+                                <tr>
+                                    <td>Oferta Especial Invierno</td>
+                                    <td>90,000</td>
+                                    <td>3,200</td>
+                                    <td>180</td>
+                                    <td>$800</td>
+                                    <td>$2,100</td>
+                                    <td>162.5%</td>
+                                </tr>
+                                <!-- Más filas de datos aquí -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="btn btn-outline">Exportar Datos (CSV)</button>
+                </div>
             </section>
 
             <section id="ia-tools-view" class="content-view">
