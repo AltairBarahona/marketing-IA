@@ -827,6 +827,192 @@ table tbody td {
     }
 }
 
+/* Settings Page Styles */
+.settings-category {
+    background-color: #232339;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #3a3a5a;
+}
+
+.settings-category h3 {
+    color: #e0e0e0;
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #3a3a5a;
+}
+
+.settings-item {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.settings-item label,
+.settings-item > span { /* For spans directly in settings-item, like notification text */
+    font-size: 0.95em;
+    color: #b0b0b0;
+    margin-bottom: 4px;
+}
+
+.settings-item input[type="text"],
+.settings-item input[type="email"],
+.settings-item input[type="password"],
+.settings-item select {
+    width: 100%;
+    max-width: 400px; /* Limit width for better readability */
+    padding: 12px;
+    border: 1px solid #4a4a6a;
+    background-color: #1f1f34;
+    color: #e0e0e0;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.settings-item input[type="text"]:focus,
+.settings-item input[type="email"]:focus,
+.settings-item input[type="password"]:focus,
+.settings-item select:focus {
+    border-color: #7f5af0;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(127, 90, 240, 0.3);
+}
+
+.settings-item select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23b0b0b0' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 35px; /* Make space for arrow */
+}
+
+.settings-item h4 {
+    color: #c0c0c0;
+    font-size: 1.1em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.settings-category > .btn {
+    margin-top: 10px; /* Space before main action button of a category */
+    width: auto;
+    display: inline-block;
+}
+
+.settings-item .btn-small {
+    width: auto;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    align-self: flex-start;
+}
+
+/* Profile Avatar Specific Styles */
+.profile-avatar-setting {
+    align-items: center; /* Center avatar and button */
+}
+.avatar-preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+.settings-avatar-preview {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4a4a6a;
+    background-color: #1f1f34;
+}
+.avatar-upload-btn {
+    width: auto;
+}
+
+/* Toggle Switch Styles */
+.toggle-setting {
+    flex-direction: row; /* Align text and toggle side-by-side */
+    justify-content: space-between;
+    align-items: center;
+    max-width: 500px; /* Limit width for better layout */
+    padding: 10px 0; /* Add some padding for better spacing */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px; /* Smaller switch */
+    height: 26px; /* Smaller switch */
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4a4a6a; /* Darker slider background */
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px; /* Smaller knob */
+    width: 18px;  /* Smaller knob */
+    left: 4px;
+    bottom: 4px;
+    background-color: #e0e0e0; /* Light knob */
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #7f5af0; /* Accent color when checked */
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #7f5af0;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px); /* Adjusted for smaller switch */
+}
+
+.slider.round {
+    border-radius: 26px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Danger Button Style */
+.btn-danger {
+    background-color: #e74c3c; /* Red color for danger actions */
+    border-color: #e74c3c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    border-color: #c0392b;
+}
+
 /* Optional: Further refinement for very large screens if needed */
 @media (min-width: 1440px) {
     .sidebar {

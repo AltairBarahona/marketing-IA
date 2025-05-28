@@ -203,7 +203,94 @@
 
             <section id="settings-view" class="content-view">
                 <h2>Configuración</h2>
-                <p>Opciones y personalización de la cuenta.</p>
+
+                <div class="settings-category">
+                    <h3>Perfil de Usuario</h3>
+                    <div class="settings-item profile-avatar-setting">
+                        <div class="avatar-preview-container">
+                            <img src="https://via.placeholder.com/100" alt="User Avatar" id="settingsAvatarPreview" class="settings-avatar-preview">
+                            <label for="avatarUpload" class="btn btn-small btn-outline avatar-upload-btn">Cambiar Avatar</label>
+                            <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
+                        </div>
+                    </div>
+                    <div class="settings-item">
+                        <label for="userName">Nombre:</label>
+                        <input type="text" id="userName" value="Usuario Ejemplo">
+                    </div>
+                    <div class="settings-item">
+                        <label for="userEmail">Email:</label>
+                        <input type="email" id="userEmail" value="usuario@ejemplo.com">
+                    </div>
+                    <div class="settings-item">
+                        <h4>Cambiar Contraseña</h4>
+                        <label for="currentPassword">Contraseña Actual:</label>
+                        <input type="password" id="currentPassword">
+                        <label for="newPassword">Nueva Contraseña:</label>
+                        <input type="password" id="newPassword">
+                        <label for="confirmNewPassword">Confirmar Nueva Contraseña:</label>
+                        <input type="password" id="confirmNewPassword">
+                        <button class="btn btn-small">Actualizar Contraseña</button>
+                    </div>
+                    <button class="btn">Guardar Cambios de Perfil</button>
+                </div>
+
+                <div class="settings-category">
+                    <h3>Preferencias de Notificaciones</h3>
+                    <div class="settings-item toggle-setting">
+                        <span>Resúmenes semanales por email</span>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="settings-item toggle-setting">
+                        <span>Alertas de rendimiento de campaña</span>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="settings-item toggle-setting">
+                        <span>Notificaciones de nuevas funciones</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <button class="btn">Guardar Preferencias de Notificaciones</button>
+                </div>
+
+                <div class="settings-category">
+                    <h3>Apariencia</h3>
+                    <div class="settings-item toggle-setting">
+                        <span>Modo Oscuro (Experimental)</span>
+                        <label class="switch">
+                            <input type="checkbox" checked disabled> 
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="settings-item">
+                        <label for="accentColor">Color de Acento:</label>
+                        <select id="accentColor">
+                            <option value="#7f5af0">Púrpura (Actual)</option>
+                            <option value="#3498db">Azul Clásico</option>
+                            <option value="#2ecc71">Verde Esmeralda</option>
+                            <option value="#e74c3c">Rojo Carmesí</option>
+                        </select>
+                    </div>
+                    <button class="btn">Aplicar Cambios de Apariencia</button>
+                </div>
+
+                <div class="settings-category">
+                    <h3>Cuenta</h3>
+                    <div class="settings-item">
+                        <button class="btn btn-outline">Exportar Mis Datos</button>
+                    </div>
+                    <div class="settings-item">
+                        <button class="btn btn-danger">Eliminar Cuenta</button>
+                    </div>
+                </div>
+
             </section>
         </main>
     </div>
